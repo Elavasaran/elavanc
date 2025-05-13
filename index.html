@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio WebSite</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <nav>
+          <h1 id="name">Elavarasan</h1>
+
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About </a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="header-text">
+          <p>Web Developer</p>
+          <h1>
+            Hi..,I'm<span> Elavarasan</span><br />
+            From Tirupathur
+          </h1>
+        </nav>
+      </div>
+    </div>
+    <hr />
+    <!-- About Us -->
+    <div id="About ">
+      <div class="container">
+        <div class="row">
+          <div class="About-col-1">
+            <img src="back3.jpg" />
+          </div>
+
+          <div class="About-col-2">
+            <h1>About Me</h1>
+            <p>
+              I'm a Computer Science Engineer from SNS College, specializing in
+              <span>Web Development</span> (HTML, CSS, Python),design (Canva),
+              and video creation
+            </p>
+            <div class="tab-title">
+              <p
+                class="tab-links active-link"
+                onclick="opentab(event, 'skill')"
+              >
+                Skill
+              </p>
+              <p class="tab-links" onclick="opentab(event, 'education')">
+                Education
+              </p>
+            </div>
+
+            <div class="tab-contents active-tab" id="skill">
+              <ul>
+                <li>
+                  <span>Front-End Development:</span> Create A WebSite And
+                  Layout
+                </li>
+                <li><span>Java:</span> Developing A Project And Learning</li>
+                <li><span>UI/UX:</span> Designing WebSite</li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>SSLC-</span> Gover.Her.Sec.School, Percentage - 74%
+                </li>
+                <li>
+                  <span>HSC-</span> Gover.Her.Sec.School, Percentage - 75%
+                </li>
+                <li>
+                  <span>CSE-</span> SNS College Of Engineering, CGP - 7.85
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+    <!-- Project -->
+
+    <div id="Project">
+  <div class="container">
+    <h1 class="sub-title">My Projects</h1>
+    <div class="project-grid">
+      
+      <div class="project-card">
+        <h2>SOLAR OUTDOOR AIR PURIFIER WITH MONITOR</h2>
+        <p>
+          A solar-powered air purifier that removes pollutants and monitors
+          air quality using real-time sensors.
+        </p>
+        <a href="project 1 solar.pptx" target="_blank">Learn More</a>
+      </div>
+
+      <div class="project-card">
+        <h2>TRAIN ACCIDENT PREDICTION AND PREVENTION</h2>
+        <p>
+          An AI and IoT-based system that detects track faults and obstacles
+          to prevent train accidents.
+        </p>
+        <a href="project 2 train.pptx" target="_blank">Learn More</a>
+      </div>
+
+      <div class="project-card">
+        <h2>LAW TRANSLATOR AND SUMMARIZER</h2>
+        <p>
+          An AI-driven tool that translates complex legal documents into
+          easy-to-understand summaries.
+        </p>
+        <a href="project 3 law.pptx" target="_blank">Learn More</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr>
+    <!--Contact -->
+
+   <div class="Contact-container">
+  <!-- Left Side: Social Media Icons -->
+  <div class="social-section">
+      <div class="Contact-info">
+    <p><strong>Name:</strong> Elavarasan C</p>
+    <p><strong>Email:</strong> <a href="mailto:example@email.com">elavarasan11142004@gmail.com</a></p>
+  </div>
+    <h2>Follow Me</h2>
+    <a href="https://github.com/Elavasaran" target="_blank">
+      <img src="github.png" alt="GitHub">
+    </a>
+    <a href="https://www.instagram.com/virat_elavan18?igsh=MTEzeDgwNWFtbHhnaA==" target="_blank">
+      <img src="instagram.png" alt="Instagram">
+    </a>
+    <a href="https://www.linkedin.com/in/elavan-chakaravarthi" target="_blank">
+      <img src="linkedin.png" alt="LinkedIn">
+    </a>
+  </div>
+
+  <!-- Right Side: Contact Form -->
+  <div class="Contact-form">
+    <h2>Contact Me</h2>
+    <form id="ContactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+
+    <script>
+      function opentab(event, tabname) {
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        for (var tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (var tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+    <script>
+  document.getElementById("ContactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevents form from refreshing the page
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    var mailtoLink = "mailto:example@email.com" + 
+                     "?subject=Message from " + encodeURIComponent(name) + 
+                     "&body=Email: " + encodeURIComponent(email) + "%0D%0A%0D%0A" + 
+                     "Message: " + encodeURIComponent(message);
+
+    window.location.href = mailtoLink;
+  });
+</script>     
+  </body>
+</html>
